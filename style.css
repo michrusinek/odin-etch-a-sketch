@@ -1,7 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-container {
     display: grid;
-    grid-template-columns: 100px 960px 100px;
-    grid-template-rows: 100px 960px 100px;
+    grid-template-columns: 100px 800px 100px;
+    grid-template-rows: 100px 800px 100px;
     grid-template-areas: 
     "header header header"
     "left-sidebar sketch-area right-sidebar"
@@ -10,24 +16,26 @@
 
 #header {
     grid-area: header;
+    background-color: darkslategray;
 }
 
 #left-sidebar {
     grid-area: left-sidebar;
+    background-color: gray;
 }
 
 #right-sidebar {
     grid-area: right-sidebar;
+    background-color: gray;
 }
 
 #footer {
     grid-area: footer;
+    background-color: gray;
 }
 
 #grid-container {
     grid-area: sketch-area;
-    width: 960px;
-    height: 960px;
 }
 
 .colored {
