@@ -23,7 +23,6 @@ for (let row = 1; row <= size; row++) {
 const gridItems= document.querySelectorAll('.grid-item');
 gridItems.forEach((item) => {
     item.addEventListener('mouseover', function() {
-        console.log("Hovered!")
         item.classList.add('colored')
     })
 })

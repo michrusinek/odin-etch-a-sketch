@@ -1,9 +1,31 @@
 #main-container {
     display: grid;
-    
+    grid-template-columns: 100px 960px 100px;
+    grid-template-rows: 100px 960px 100px;
+    grid-template-areas: 
+    "header header header"
+    "left-sidebar sketch-area right-sidebar"
+    "footer footer footer";
+}
+
+#header {
+    grid-area: header;
+}
+
+#left-sidebar {
+    grid-area: left-sidebar;
+}
+
+#right-sidebar {
+    grid-area: right-sidebar;
+}
+
+#footer {
+    grid-area: footer;
 }
 
 #grid-container {
+    grid-area: sketch-area;
     width: 960px;
     height: 960px;
 }
