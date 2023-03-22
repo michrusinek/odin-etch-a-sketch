@@ -3,6 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #001933;
+    font-family: 'Roboto', sans-serif;
+    color: #F7F7C7;
 }
 
 p {
@@ -15,8 +17,6 @@ h1 {
 
 #header-title {
     font-size: 36px;
-    font-family: 'Roboto', sans-serif;
-    color: #F7F7C7;
 }
 #main-container {
     display: grid;
@@ -39,9 +39,13 @@ h1 {
 
 #left-sidebar {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
     grid-area: left-sidebar;
     height:100%;
-    
+    font-size: 20px;
 }
 
 #right-sidebar {
