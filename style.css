@@ -2,12 +2,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #001933;
 }
 
+p {
+    margin: 0px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+#header-title {
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    color: #F7F7C7;
+}
 #main-container {
     display: grid;
-    grid-template-columns: 100px 800px 100px;
-    grid-template-rows: 100px 800px 100px;
+    grid-template-columns: 300px 900px 300px;
+    grid-template-rows: 60px 900px 10px;
     grid-template-areas: 
     "header header header"
     "left-sidebar sketch-area right-sidebar"
@@ -16,26 +30,33 @@ body {
 
 #header {
     grid-area: header;
-    background-color: darkslategray;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #001933;
 }
 
+
 #left-sidebar {
+    display: flex;
     grid-area: left-sidebar;
-    background-color: gray;
+    height:100%;
+    
 }
 
 #right-sidebar {
     grid-area: right-sidebar;
-    background-color: gray;
+    height: 100%;
 }
 
 #footer {
     grid-area: footer;
-    background-color: gray;
 }
 
 #grid-container {
     grid-area: sketch-area;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .colored {
