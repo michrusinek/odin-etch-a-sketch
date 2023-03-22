@@ -71,3 +71,24 @@ h1 {
     color: red;
     font-size: 16px;
 }
+
+.sidebar-txt {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+::placeholder {
+    font-size: 16px;
+    color: #001933; 
+}
+
+
+#size {
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 8px;
+    border: solid 2px #66B2FF;
+    background-color: #CCE5FF;
+}

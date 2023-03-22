@@ -31,9 +31,6 @@ function addBlockColoring() {
     })
 }
 
-createGrid(size);
-addBlockColoring()
-
 function clearSketchArea() {
     const gridItems= document.querySelectorAll('.grid-item')
     gridItems.forEach((item) => {
@@ -41,6 +38,8 @@ function clearSketchArea() {
     })
 }
 
+createGrid(size);
+addBlockColoring()
 
 const input = document.querySelector('input')
 const errorMsg = document.querySelector('#error-msg')
@@ -54,6 +53,7 @@ input.addEventListener('input', function() {
         errorMsg.textContent = "Size must be a number."
     } else {
         errorMsg.textContent = "";
+        clearSketchArea();
         createGrid(size);
         addBlockColoring();
     }
