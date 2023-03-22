@@ -66,3 +66,8 @@ h1 {
 .colored {
     background-color: black;
 }
+
+#error-msg {
+    color: red;
+    font-size: 16px;
+}

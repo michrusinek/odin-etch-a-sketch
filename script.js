@@ -34,10 +34,27 @@ function addBlockColoring() {
 createGrid(size);
 addBlockColoring()
 
+function clearSketchArea() {
+    const gridItems= document.querySelectorAll('.grid-item')
+    gridItems.forEach((item) => {
+        item.classList.remove('colored');
+    })
+}
+
+
 const input = document.querySelector('input')
+const errorMsg = document.querySelector('#error-msg')
 
 input.addEventListener('input', function() {
     size = parseInt(input.value);
-    createGrid(size);
-    addBlockColoring();
+    console.log(size);
+    if (size > 100) {
+        errorMsg.textContent = "Size cannot exceed 100.";
+    } else if (isNaN(size)) {
+        errorMsg.textContent = "Size must be a number."
+    } else {
+        errorMsg.textContent = "";
+        createGrid(size);
+        addBlockColoring();
+    }
 })
