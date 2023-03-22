@@ -22,7 +22,7 @@ function createGrid(size) {
 
 }
 
-function addBlockColoring() {
+function addGridColoring() {
     const gridItems= document.querySelectorAll('.grid-item');
     gridItems.forEach((item) => {
         item.addEventListener('mouseover', function() {
@@ -39,10 +39,10 @@ function clearSketchArea() {
 }
 
 createGrid(size);
-addBlockColoring()
+addGridColoring();
 
-const input = document.querySelector('input')
-const errorMsg = document.querySelector('#error-msg')
+const input = document.querySelector('input');
+const errorMsg = document.querySelector('#error-msg');
 
 input.addEventListener('input', function() {
     size = parseInt(input.value);
@@ -50,11 +50,15 @@ input.addEventListener('input', function() {
     if (size > 100) {
         errorMsg.textContent = "Size cannot exceed 100.";
     } else if (isNaN(size)) {
-        errorMsg.textContent = "Size must be a number."
+        errorMsg.textContent = "Size must be a number.";
     } else {
         errorMsg.textContent = "";
         clearSketchArea();
         createGrid(size);
-        addBlockColoring();
+        addGridColoring();
     }
 })
+
+const clearBtn = document.querySelector("#clear-btn");
+console.log(clearBtn);
+clearBtn.addEventListener('click', clearSketchArea)
