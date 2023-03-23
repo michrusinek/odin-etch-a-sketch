@@ -1,13 +1,16 @@
+// inital grid size
 let size = 16;
 
+
 function createGrid(size) {
+    // creating grid
     const container = document.querySelector('#grid-container');
     container.setAttribute(
         'style', `display: grid; 
         grid-template-columns: repeat(${size}, 1fr [col-start]); 
         grid-template-rows: repeat(${size}, 1fr [row-start])`
     );
-
+    // putting divs inside the grid
     for (let row = 1; row <= size; row++) {
         for (let col = 1; col <= size; col++) {
             const div = document.createElement('div')
@@ -44,6 +47,8 @@ addGridColoring();
 const input = document.querySelector('input');
 const errorMsg = document.querySelector('#error-msg');
 
+// Changing the size of the grid, 
+// based on the input from the user
 input.addEventListener('input', function() {
     size = parseInt(input.value);
     console.log(size);
@@ -60,5 +65,4 @@ input.addEventListener('input', function() {
 })
 
 const clearBtn = document.querySelector("#clear-btn");
-console.log(clearBtn);
 clearBtn.addEventListener('click', clearSketchArea)
