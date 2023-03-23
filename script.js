@@ -1,6 +1,6 @@
 // inital grid size
 let size = 16;
-
+let startDrawing = false;
 
 function createGrid(size) {
     // creating grid
@@ -34,6 +34,15 @@ function addGridColoring() {
     })
 }
 
+function removeGridColoring() {
+    const gridItems= document.querySelectorAll('.grid-item');
+    gridItems.forEach((item) => {
+        item.removeEventListener('mouseover', function() {
+            item.classList.add('colored');
+        });
+    })
+}
+
 function clearSketchArea() {
     const gridItems= document.querySelectorAll('.grid-item')
     gridItems.forEach((item) => {
@@ -42,7 +51,21 @@ function clearSketchArea() {
 }
 
 createGrid(size);
-addGridColoring();
+
+document.addEventListener('keydown', (event) => {
+    const keyCode = event.code;
+    if (keyCode == 'KeyX') {
+        startDrawing = !startDrawing;
+        console.log(startDrawing);
+    }
+    if (startDrawing) {
+        addGridColoring();
+    } else {
+        removeGridColoring();
+    }
+
+})
+
 
 const input = document.querySelector('input');
 const errorMsg = document.querySelector('#error-msg');
@@ -65,4 +88,4 @@ input.addEventListener('input', function() {
 })
 
 const clearBtn = document.querySelector("#clear-btn");
-clearBtn.addEventListener('click', clearSketchArea)
+clearBtn.addEventListener('click', clearSketchArea);
