@@ -44,13 +44,11 @@ h1 {
     align-items: center;
     gap: 10px;
     grid-area: left-sidebar;
-    height:100%;
     font-size: 20px;
 }
 
 #right-sidebar {
     grid-area: right-sidebar;
-    height: 100%;
 }
 
 #footer {
