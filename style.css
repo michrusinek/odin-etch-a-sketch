@@ -110,3 +110,12 @@ h1 {
 #clear-btn:hover {
     box-shadow: 0px 5px 15px rgba(102, 178, 255, .4);
 }
+
+#instruction {
+    text-align: center;
+}
+
+#x {
+    font-weight: bold;
+    color: #ffff18; 
+}
