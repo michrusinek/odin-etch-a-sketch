@@ -38,34 +38,6 @@ function addGridColoring() {
         });
     })
 }
-// copy of above function
-// function addGridColoring() {
-//     const gridItems = document.querySelectorAll('.grid-item');
-//     gridItems.forEach((item) => {
-//         item.addEventListener('mouseover', addBlackPen(event));
-//         console.log("added class .black");
-//     })
-// }
-
-// function removeGridColoring() {
-//     const gridItems = document.querySelectorAll('.grid-item');
-//     gridItems.forEach((item) => {
-//         item.removeEventListener('mouseover', function(event) {
-//             console.log(event.target);
-//             item.classList.add('black');
-//         });
-//     })
-// }
-
-function removeGridColoring() {
-    const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach((item) => {
-        item.addEventListener('mouseover', function(event){
-            console.log(event.target);
-            addBlackPen(event)
-        });
-    })
-}
 
 function clearSketchArea() {
     const gridItems= document.querySelectorAll('.grid-item')
@@ -80,13 +52,8 @@ document.addEventListener('keydown', (event) => {
     const keyCode = event.code;
     if (keyCode == 'KeyX') {
         startDrawing = !startDrawing;
-    }
-    if (startDrawing) {
         addGridColoring();
-    } else {
-        removeGridColoring();
     }
-
 })
 
 
@@ -106,7 +73,6 @@ input.addEventListener('input', function() {
         errorMsg.textContent = "";
         clearSketchArea();
         createGrid(size);
-        addGridColoring();
     }
 })
 
